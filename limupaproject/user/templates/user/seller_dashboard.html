@@ -1,0 +1,27 @@
+{% extends "limupaApp/base.html" %}
+{% load static %}
+
+{% block content %}
+    <div style="margin-top: 200px;">
+        <h1>Seller Dashboard</h1>
+
+        <!-- Overview Section -->
+        <section>
+            <h2>Overview</h2>
+            <p><strong>Total Earnings:</strong> ${{ total_earnings }}</p>
+            <p><strong>Orders in Progress:</strong> {{ orders_in_progress }}</p>
+            <p><strong>Top Product:</strong> {{ top_product.name }} - {{ top_product.sales }} sales</p>
+        </section>
+
+        <!-- Quick Actions -->
+        <section>
+            <h2>Quick Actions</h2>
+            <a href="#" class="btn">Manage Inventory</a>
+            <a href="{% url 'add_product' %}" class="btn">Add New Product</a>
+            <a href="{% url 'send_email' %}" class="btn">send_email</a>
+            <a href="#" class="btn">Manage Orders</a>
+        </section>
+    </div>
+
+     
+{% endblock %}

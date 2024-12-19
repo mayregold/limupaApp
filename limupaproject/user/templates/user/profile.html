@@ -1,0 +1,23 @@
+{% extends "limupaApp/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- profile.html -->
+<div class="profile-container" style="margin-top: 3em;">
+    <!-- profile.html -->
+    <h1>{{ user.username }}'s Profile</h1>
+
+    {% if profile.profile_pic %}
+    <img src="{{ profile.profile_pic.url }}" alt="Profile Picture" style="width: 50%;">
+    {% else %}
+    <p>No image uploaded yet.</p>
+    {% endif %}
+
+    <p>Bio: {{ profile.bio }}</p>
+    <p>Location: {{ profile.location }}</p>
+    <a href="{% url 'edit_profile' %}">Edit Profile</a>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "limupaApp/base.html"%}
+{% load static %}
+
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{product.name}}</title>
+</head>
+<body>
+    <!-- delete_product.html -->
+    <h2>Delete {{ product.name }}</h2>
+    <p>Are you sure you want to delete this product?</p>
+
+    <form method="POST" >
+        {% csrf_token %}
+        <button type="submit">Yes, delete</button>
+    </form>
+    <a href="{% url 'product_list' %}">Cancel</a>
+</body>
+</html>
+{% endblock %}

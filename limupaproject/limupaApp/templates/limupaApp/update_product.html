@@ -1,0 +1,30 @@
+{% extends "limupaApp/base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+    <!-- update_product.html -->
+    <div class="container mt-5">
+        <h2>Edit Product</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Update</button>
+        </form>
+    </div>
+    
+
+{% endblock %}

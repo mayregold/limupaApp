@@ -1,0 +1,17 @@
+{% extends 'limupaApp/base.html'%}
+{% load static %}
+
+{% block content %}
+    <div class="reg" style="margin-top: 400px;">
+        <h2>Register</h2>
+        <div>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Sign up</button>
+            </form>
+        </div>
+        <p class="para">Already have an account 😁! <a href="{% url 'login' %}">Sign In</a></p>
+    </div>
+
+{% endblock %}

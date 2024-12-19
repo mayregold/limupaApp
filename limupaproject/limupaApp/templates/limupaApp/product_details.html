@@ -1,0 +1,50 @@
+{% extends "limupaApp/base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }}</title>
+
+</head>
+
+<body>
+
+    <div class="product_details">
+
+        <div class="card">
+
+            <div class="cards">
+                <div class="card_img">
+                    <img src="{{ product.image.url }}" alt="">
+                </div>
+                <div class="details">
+                    <div class="details_1">
+                        <li>{{ product.name }}</li>
+                        <p> {{ product.description }}</p>
+                        <p> {{ product.price }}$</p>
+                    </div>
+                    <div class="link">
+                        <button> <a href="{% url 'product_list' %}">product List</a></button>
+                        <button> <a href="{% url 'update_product' product.id %}">Edit</a></button>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+{% endblock %}

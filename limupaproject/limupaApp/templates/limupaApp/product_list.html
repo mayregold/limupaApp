@@ -1,0 +1,70 @@
+{% extends "limupaApp/base.html"%}
+{% load static %}
+
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link rel="stylesheet" href="{% static 'limupaApp/css/style.css' %}">
+</head>
+
+<body>
+
+    <div class="product">
+        <h1>Available Products</h1>
+
+
+
+        <div class="product_list">
+
+
+            <ul>
+                
+                {% for product in products %}
+                <div class="products">
+
+                    <div>
+                        <li><a href="{% url 'product_details' product.id %}">{{ product.name }}</a></li><br>
+                    </div>
+                    <div class="">
+                        <div class="link">
+                            <a href="{% url 'update_product' product.id %}">Edit</a>
+                        </div>
+                        <div class="link">
+                            <a href="{% url 'product_details' product.id %}">View Details</a>
+                        </div>
+                    </div>
+                    <div>
+                        <button><a href="{% url 'delete_product' product.id %}">Delete</a></button>
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+
+
+            </ul>
+            <div class="link_but">
+
+                <br><br><br><button><a href="{% url 'add_product' %}">Add product</a></button>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+</body>
+
+</html>
+
+
+{% endblock %}

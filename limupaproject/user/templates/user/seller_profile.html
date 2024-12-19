@@ -1,0 +1,21 @@
+{% extends "limupaApp/base.html" %}
+{% load static %}
+
+{% block content %}
+    <div style="margin-top: 200px;">
+        <h2>Seller Profile: {{ profile.user.username }}</h2>
+        <p>Seller-specific information here, such as contracts, product listings, etc.</p>
+
+        <h3>Your Products</h3>
+        <ul>
+            {% for product in products %}
+                <div class="product">
+                    <img src="{{ product.image.url }}" alt="">
+                    <li>{{ product.name }} - {{ product.price }}</li>
+                </div>
+                
+            {% endfor %}
+        </ul>
+    </div>
+    
+{% endblock %}

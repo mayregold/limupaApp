@@ -1,0 +1,50 @@
+{% extends "limupaApp/base.html" %}
+{% load static %}
+
+{% block content %}
+    <div style="margin-top: 200px;">
+        <h1>Buyer Dashboard</h1>
+
+        <!-- Overview Section -->
+        <section>
+            <h2>Overview</h2>
+            <p><strong>Orders in Progress:</strong></p>
+            <p><strong>Wishlist Items:</strong> w</p>
+        </section>
+
+        <!-- Quick Actions -->
+        <section>
+            <h2>Quick Actions</h2>
+            <a href="#" class="btn">Track Orders</a>
+            <a href="#" class="btn">Manage Addresses</a>
+        </section>
+
+        <!-- Recommendations -->
+        <!-- <section>
+            <h2>Recommended for You</h2>
+            <div class="recommendations">
+                {% for product in recommended_products %}
+                    <div class="product-card">
+                        <h3>{{ product.name }}</h3>
+                        <p>${{ product.price }}</p>
+                        <a href="{% url 'product_detail' product.id %}" class="btn">View Product</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </section> -->
+
+        <!-- Notifications -->
+        <!-- <section>
+            <h2>Notifications</h2>
+            {% if delivery_notifications %}
+                <ul>
+                    {% for notification in delivery_notifications %}
+                        <li>{{ notification }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No notifications at this time.</p>
+            {% endif %}
+        </section> -->
+    </div>
+{% endblock %}
